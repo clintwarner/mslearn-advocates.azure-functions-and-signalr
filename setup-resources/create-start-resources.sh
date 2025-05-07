@@ -75,7 +75,7 @@ az cosmosdb create  \
   --name $COMSOSDB_NAME \
   --resource-group $RESOURCE_GROUP_NAME
 
-printf "Creating CosmosDB db\n"
+printf "Creating CosmosDB db\n"s
 # Create stocksdb database
 az cosmosdb sql database create \
     --account-name $COMSOSDB_NAME \
@@ -87,7 +87,7 @@ az cosmosdb sql container create \
     --account-name $COMSOSDB_NAME \
     --database-name stocksdb \
     --name stocks \
-    --partition-key-path /symbol
+    --partition-key-path "//symbol"
 
 printf "Get storage connection string\n"
 
